@@ -1,0 +1,31 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="TestNGTests" parallel="methods" thread-count="2">
+    <test name="All Tests">
+        <groups>
+            <define name="all">
+                <include name="main"/>
+                <include name="news"/>
+                <include name="navigator"/>
+                <include name="login"/>
+                <include name="afisha/cinemas"/>
+                <include name="filmPageAuthorised"/>
+                <include name="filmPageUnauthorised"/>
+                <include name="filmPage"/>
+            </define>
+            <run>
+                <include name="all"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="ru.kinopoisk.tests.main.TestAllMain"></class>
+            <class name="ru.kinopoisk.tests.news.TestNewsSmoke"></class>
+            <class name="ru.kinopoisk.tests.navigator.NavigatorPositiveTest"></class>
+            <class name="ru.kinopoisk.tests.navigator.NavigatorNegativeTest"></class>
+            <class name="ru.kinopoisk.tests.login.TestLogin"></class>
+            <class name="ru.kinopoisk.tests.afisha.cinemas.TestRunner"></class>
+            <class name="ru.kinopoisk.tests.filmPage.TestCommonFilmPage"></class>
+            <class name="ru.kinopoisk.tests.filmPage.TestAuthorisedUserFilmPage"></class>
+            <class name="ru.kinopoisk.tests.profile.TestProfileSettings"></class>
+        </classes>
+    </test>
+</suite>
